@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FirebaseWallpaperTest</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toast_saved">Picture Saved</string>
+    <string name="toast_saved_failed">Error: picture not saved</string>
+    <string name="gallery_name">KubaWallpapersGallery</string>
+    <string name="toast_wallpaper_set">wallpaper set!</string>
+    <string name="toast_wallpaper_set_failed">wallpaper set failed</string>
+
+
+
+
+    <string name="google_maps_api_key">AIzaSyDBvAsgtL6ffaCm_zO_E-_RNO0d0LPdwLM</string>
+</resources>
