@@ -6,6 +6,7 @@
 
 
     <color name="pink">#E285B5</color>
+    <color name="pink_pressed">#ae4d7f</color>
     <color name="white">#FFE9F3</color>
     <color name="gray">#373737</color>
     <color name="purple">#C494C1</color>

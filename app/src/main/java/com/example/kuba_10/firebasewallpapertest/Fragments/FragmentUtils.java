@@ -10,6 +10,8 @@ public interface FragmentUtils {
 
     void openFragment(Fragment fragment);
 
+    void requestPermission();
+
 
 
 

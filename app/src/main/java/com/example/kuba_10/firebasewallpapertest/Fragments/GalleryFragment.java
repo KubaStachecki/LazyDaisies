@@ -103,6 +103,7 @@ public class GalleryFragment extends Fragment {
         super.onStart();
 
 
+        mainActivity.requestPermission();
 
 
     }

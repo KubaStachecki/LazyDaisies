@@ -1,13 +1,120 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.StartFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/gray"
+    tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.StartFragment"
+    android:weightSum="1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:layout_margin="10dp"
+
+        android:scaleType="fitCenter"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_wezyk1"
+        android:tint="@color/pink"/>
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/SimpleExoPlayer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="START FRAGMENT" />
+        android:layout_height="230dp"
+        app:use_controller="false">
 
-</FrameLayout>
+    </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+    <ImageView
+        android:layout_margin="10dp"
+
+        android:scaleType="fitCenter"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_wezyk1"
+        android:tint="@color/pink"/>
+
+    <TextView
+        android:textColor="@color/pink"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Urok, Wdzięk i Słodycz"
+
+        />
+
+    <TextView
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        android:fontFamily="serif"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lazy Daisies to pełne wdzięku, radości i słodyczy urocze trio oraz złotousty zaklinacz ognia."
+
+        />
+
+    <TextView
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:fontFamily="serif"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Występy Lazy Daisies zawsze przygotowywane są z zachowaniem dobrego smaku, a prezentowany erotyzm jest subtelny i przyjemny dla każdego oka."
+        />
+
+    <TextView
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:fontFamily="serif"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Celem pokazu jest uwiedzenie widza, przeniesienie go w krainę Złotej Ery Hollywoodu, a wykorzystanie nagości jest zaledwie symboliczne."
+        />
+
+<!--<RelativeLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="228dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|left"-->
+        <!--android:background="@drawable/ic_stralka1"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:scaleX="0.5"-->
+        <!--android:scaleY="0.5"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Dowiedz się więcej!"-->
+        <!--android:textSize="8sp"-->
+        <!--android:textColor="@color/pink"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginLeft="67dp"-->
+        <!--android:layout_marginStart="67dp" />-->
+<!--</RelativeLayout>-->
+
+</LinearLayout>

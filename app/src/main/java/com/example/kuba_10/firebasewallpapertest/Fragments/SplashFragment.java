@@ -80,7 +80,7 @@ public class SplashFragment extends DialogFragment {
     }
 
     private void playLogo() {
-        animationView.setAnimation("lazy_anim2.json");
+        animationView.setAnimation("lazy_anim3.json");
         animationView.useExperimentalHardwareAcceleration(true);
         animationView.enableMergePathsForKitKatAndAbove(true);
         animationView.loop(false);

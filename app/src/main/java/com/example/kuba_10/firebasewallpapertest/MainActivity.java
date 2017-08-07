@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
 
         hideTaskAndActrionBar();
-        requestPermission();
 
         SplashFragment.newInstance().show(getSupportFragmentManager(), "");
 
@@ -173,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
     }
 
 
-    private void requestPermission() {
+     public void requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_PERMISSION);
         }
@@ -224,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-                Log.d(MainActivity.TAAAAG,"FAPAK Z POLACZENIEM NEWS");
+                Log.d(MainActivity.TAAAAG,"FAKAP Z POLACZENIEM NEWS");
             }
         });
 

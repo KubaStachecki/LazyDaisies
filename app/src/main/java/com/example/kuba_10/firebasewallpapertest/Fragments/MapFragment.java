@@ -23,7 +23,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.Map;
 
 
-
 public class MapFragment extends android.support.v4.app.Fragment
         implements OnMapReadyCallback {
 
@@ -56,7 +55,9 @@ public class MapFragment extends android.support.v4.app.Fragment
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_map, container, false);
-        location = new LatLng(51.108061, 17.018059);
+        location = new LatLng(
+                51.109938, 17.034541
+        );
 
 
         mMapView = (MapView) v.findViewById(R.id.mapView);
@@ -73,7 +74,7 @@ public class MapFragment extends android.support.v4.app.Fragment
         mGoogleMap = googleMap;
         mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
         mGoogleMap.addMarker(new MarkerOptions().position(location));
-setUpMapAnimation();
+        setUpMapAnimation();
     }
 
 
@@ -81,7 +82,7 @@ setUpMapAnimation();
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(location)      // Sets the center of the map to Mountain View
-                .zoom(18)                   // Sets the zoom
+                .zoom(10)                   // Sets the zoom
                 .bearing(90)                // Sets the orientation of the camera to east
                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                 .build();                   // Creates a CameraPosition from the builder
@@ -91,16 +92,14 @@ setUpMapAnimation();
 //                (CameraUpdateFactory.newCameraPosition(cameraPosition));
 
 
-
     }
 
 
-
-@Override
-public void onResume() {
-    super.onResume();
-    mMapView.onResume();
-}
+    @Override
+    public void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
 
     @Override
     public void onPause() {
