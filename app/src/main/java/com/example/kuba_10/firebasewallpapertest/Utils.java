@@ -31,7 +31,6 @@ public class Utils {
 
 
     private Context context;
-//    private PreferenceManager pref;
 
 
 
@@ -65,12 +64,13 @@ public class Utils {
 
         File mediaStorageDir = new File(
                 Environment
+
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
                 context.getString(R.string.gallery_name));
         if (!mediaStorageDir.exists()) {
-            Log.d(MainActivity.TAAAAG, "directory was NOT present at check - created");
+
+        }
             if (!mediaStorageDir.mkdirs()) {
-                Log.d(MainActivity.TAAAAG, "failed to create directory");}
 
         }
 
@@ -80,8 +80,6 @@ public class Utils {
 
         if (file.exists())
             file.delete();
-//            Toast.makeText(context, "plik istnieje", Toast.LENGTH_SHORT).show();
-        Log.d(MainActivity.TAAAAG, "there was a file with this name - deleted and saved again" + file.getAbsolutePath());
 
 
         try {
@@ -90,13 +88,11 @@ public class Utils {
             out.flush();
             out.close();
 
-            Log.d(MainActivity.TAAAAG, "Wallpaper saved to: " + file.getAbsolutePath());
 
         } catch (Exception e) {
             e.printStackTrace();
 
-            Log.d(MainActivity.TAAAAG, "Wallpaper not saved" + e);
-
+            Toast.makeText(context, "Nie udało się zapisać pliku :(", Toast.LENGTH_SHORT).show();
 
         }
 

@@ -1,7 +1,5 @@
 package com.example.kuba_10.firebasewallpapertest.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,18 +7,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.kuba_10.firebasewallpapertest.Adapters.ExpandableRecyclerAdapter;
-import com.example.kuba_10.firebasewallpapertest.Model.News;
+import com.example.kuba_10.firebasewallpapertest.MainActivity;
+import com.example.kuba_10.firebasewallpapertest.Model.Staff;
 import com.example.kuba_10.firebasewallpapertest.R;
 
 import java.util.ArrayList;
 
 public class NewsFragment extends Fragment {
 
-    ArrayList<News> newsList;
+    ArrayList<Staff> staffList;
     private RecyclerView recyclerView;
+    private ImageView errorImage;
 
+    FragmentUtils mainActivity;
 
 
 
@@ -42,6 +44,9 @@ public class NewsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mainActivity = (MainActivity) getActivity();
+
+
     }
 
     @Override
@@ -50,10 +55,14 @@ public class NewsFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_news, container, false);
 
+        errorImage = (ImageView) view.findViewById(R.id.error_image_news);
 
-        newsList = getArguments().getParcelableArrayList("newslist");
+
+        staffList = getArguments().getParcelableArrayList("newslist");
 
         recyclerView = (RecyclerView) view.findViewById(R.id.news_recycle);
+        errorImage.setVisibility(View.GONE);
+
 
         return view;
     }
@@ -67,7 +76,15 @@ public class NewsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-//fetch data and on ExpandableRecyclerAdapter
-        recyclerView.setAdapter(new ExpandableRecyclerAdapter(newsList));
+        recyclerView.setAdapter(new ExpandableRecyclerAdapter(staffList));
+
+
+
+        if (staffList.size() == 0){
+
+
+            errorImage.setVisibility(View.VISIBLE);
+
+        }
     }
 }

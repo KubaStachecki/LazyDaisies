@@ -1,14 +1,16 @@
 package com.example.kuba_10.firebasewallpapertest;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.FrameLayout;
 
 import com.example.kuba_10.firebasewallpapertest.Fragments.FragmentUtils;
 import com.example.kuba_10.firebasewallpapertest.Fragments.GalleryFragment;
@@ -17,7 +19,7 @@ import com.example.kuba_10.firebasewallpapertest.Fragments.NewsFragment;
 import com.example.kuba_10.firebasewallpapertest.Fragments.SplashFragment;
 import com.example.kuba_10.firebasewallpapertest.Fragments.StartFragment;
 import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.Model.News;
+import com.example.kuba_10.firebasewallpapertest.Model.Staff;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.database.DatabaseError;
@@ -25,14 +27,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FragmentUtils, View.OnClickListener {
 
 
     ArrayList<Image> imageList;
-    ArrayList<News> newsList;
+    ArrayList<Staff> staffList;
     Bundle listBundle;
+    CoordinatorLayout coordinatorLayout;
+    Context context;
 
 
     public static final String TAAAAG = "MAIN ACTIVITY TAG";
@@ -47,12 +50,14 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        context = getApplicationContext();
+
 
         imageList = new ArrayList<>();
-        newsList = new ArrayList<>();
+        staffList = new ArrayList<>();
 
         getImagesFromFirebase();
-//        getNewsFromFirebase();
 
 
         materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
@@ -81,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
         listBundle = new Bundle();
         listBundle.putParcelableArrayList("imagelist", imageList);
-        listBundle.putParcelableArrayList("newslist", newsList);
+        listBundle.putParcelableArrayList("newslist", staffList);
 
 
     }
@@ -124,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
                 openFragment(MapFragment.newInstance());
                 materialDesignFAM.close(true);
+//                main_container.setBackgroundColor(getResources().getColor(R.color.gray));
 
 
                 break;
@@ -134,7 +140,6 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
                 openFragment(StartFragment.newInstance());
                 materialDesignFAM.close(true);
-
 
                 break;
 
@@ -180,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
 
     private void hideTaskAndActrionBar() {
+
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
@@ -194,17 +200,16 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
             @Override
             public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
-                Log.d(MainActivity.TAAAAG, Long.toString(dataSnapshot.getChildrenCount()) + "UDALO SIE POLACZYC");
                 imageList.clear();
                 for (com.google.firebase.database.DataSnapshot child : dataSnapshot.getChildren()) {
                     Image image = child.getValue(Image.class);
                     imageList.add(image);
-                Log.d(MainActivity.TAAAAG, imageList.size() + "ROZMIAR LISTY IMAGES");
                 }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.d(MainActivity.TAAAAG,"FAPAK Z POLACZENIEM IMAGES");
+                showSnackbar("Error - check internet connection") ;
+
             }
         });
 
@@ -212,62 +217,29 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
             @Override
             public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
-                Log.d(MainActivity.TAAAAG, Long.toString(dataSnapshot.getChildrenCount()) + "UDALO SIE POLACZYC");
-                newsList.clear();
+                staffList.clear();
                 for (com.google.firebase.database.DataSnapshot child : dataSnapshot.getChildren()) {
-                    News news = child.getValue(News.class);
-                    newsList.add(news);
-                    Log.d(MainActivity.TAAAAG, newsList.size() + "ROZMIAR LISTY NEWS");
+                    Staff staff = child.getValue(Staff.class);
+                    staffList.add(staff);
                 }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-                Log.d(MainActivity.TAAAAG,"FAKAP Z POLACZENIEM NEWS");
+                showSnackbar("Error - check internet connection") ;
+
+
             }
+
+
         });
 
     }
 
+    public void showSnackbar(String text){
 
-//    public void getNewsFromFirebase() {
-//        FirebaseDatabase fDatabase = FirebaseDatabase.getInstance();
-//        DatabaseReference databaseReference = fDatabase.getReference();
-//        databaseReference.child("news").addValueEventListener(new com.google.firebase.database.ValueEventListener() {
-//
-//
-//            @Override
-//            public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
-//
-//
-//                Log.d(MainActivity.TAAAAG, Long.toString(dataSnapshot.getChildrenCount()) + "UDALO SIE POLACZYC");
-//
-//                newsList.clear();
-//
-//
-//                for (com.google.firebase.database.DataSnapshot child : dataSnapshot.getChildren()) {
-//
-//
-//                    News news = child.getValue(News.class);
-//
-//                    newsList.add(news);
-//
-//                    Log.d(MainActivity.TAAAAG, newsList.size() + "ROZMIAR LISTY NEWS");
-//
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-////                Toast.makeText(MainActivity.this, "Error connecting to database - chec internet connection!", Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//    }
-
+        Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_LONG).show();
+    }
 
 }
 

@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class ImageFragment extends Fragment {
+public class ImageFragment extends Fragment  {
 
     @BindView(R.id.big_image)
     ImageView bigImage;
@@ -44,6 +44,7 @@ public class ImageFragment extends Fragment {
 
 
     Utils utils;
+    FragmentUtils mainUtils;
 
     Image image;
     Bitmap thisBitmap;
@@ -69,7 +70,7 @@ public class ImageFragment extends Fragment {
 
         ((MainActivity) getActivity()).getSupportActionBar().hide();
 
-
+        mainUtils = (MainActivity) getActivity();
     }
 
     @Override
@@ -107,8 +108,7 @@ public class ImageFragment extends Fragment {
 
                     @Override
                     public void onError() {
-                        Toast.makeText(getActivity(), "error while loading picture", Toast.LENGTH_SHORT).show();
-                    }
+                        mainUtils.showSnackbar("Error - check internet connection") ;                   }
                 });
 
 
@@ -131,10 +131,10 @@ public class ImageFragment extends Fragment {
 
 
                 if (thisBitmap == null) {
-                    Toast.makeText(getActivity(), "wait for image to load", Toast.LENGTH_SHORT).show();
+                    mainUtils.showSnackbar("Error - image not loaded") ;
+
                 } else {
                     utils.saveImageToSDCard(thisBitmap, imageName);
-                    Log.d(MainActivity.TAAAAG, imageName + "    zapisany");
                 }
 
 
@@ -146,10 +146,9 @@ public class ImageFragment extends Fragment {
             public void onClick(View view) {
 
                 if (thisBitmap == null) {
-                    Toast.makeText(getActivity(), "wait for image to load", Toast.LENGTH_SHORT).show();
+                    mainUtils.showSnackbar("Error - image not loaded") ;
                 } else {
                     utils.shareWallpaperUrl(thisBitmap, imageName);
-                    Log.d(MainActivity.TAAAAG, imageName + "     udostepniony");
                 }
 
             }
@@ -160,10 +159,9 @@ public class ImageFragment extends Fragment {
             public void onClick(View view) {
 
                 if (thisBitmap == null) {
-                    Toast.makeText(getActivity(), "wait for image to load", Toast.LENGTH_SHORT).show();
+                    mainUtils.showSnackbar("Error - image not loaded") ;
                 } else {
                     utils.setAsWallpaper(thisBitmap, imageName);
-                    Log.d(MainActivity.TAAAAG, imageName + "ustawiony");
                 }
             }
         });

@@ -18,6 +18,8 @@
         style="?android:attr/progressBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:progressTint="@color/pink"
+        android:secondaryProgressTint="@color/pink"
         android:backgroundTint="@color/cardview_light_background"
         android:layout_centerInParent="true"
 

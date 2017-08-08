@@ -14,21 +14,21 @@ import android.widget.TextView;
 import com.example.kuba_10.firebasewallpapertest.R;
 
 
-import com.example.kuba_10.firebasewallpapertest.Model.News;
+import com.example.kuba_10.firebasewallpapertest.Model.Staff;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
 public class ExpandableRecyclerAdapter extends RecyclerView.Adapter<ExpandableRecyclerAdapter.ViewHolder> {
 
-    private List<News> newsList;
+    private List<Staff> staffList;
     private SparseBooleanArray expandState = new SparseBooleanArray();
     private Context context;
 
-    public ExpandableRecyclerAdapter(List<News> newsList) {
-        this.newsList = newsList;
+    public ExpandableRecyclerAdapter(List<Staff> staffList) {
+        this.staffList = staffList;
         //set initial expanded state to false
-        for (int i = 0; i < newsList.size(); i++) {
+        for (int i = 0; i < staffList.size(); i++) {
             expandState.append(i, false);
         }
     }
@@ -45,75 +45,46 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter<ExpandableRe
 
         viewHolder.setIsRecyclable(false);
 
-        viewHolder.tvName.setText(newsList.get(i).getTitle());
+        viewHolder.zapowiedz.setText(staffList.get(i).getZapowiedz());
+        viewHolder.opis.setText(staffList.get(i).getOpis());
+        viewHolder.imie .setText(staffList.get(i).getImie());
 
-        viewHolder.tvOwnerLogin.setText("Owner: " +newsList.get(i).getContent());
-        viewHolder.tvOwnerUrl.setText(newsList.get(i).getUrl());
+
 
         Picasso.with(context)
-                .load(newsList.get(i).getUrl())
+                .load(staffList.get(i).getObrazek())
                 .resize(500, 500)
                 .centerCrop()
-                .into(viewHolder.ivOwner);
+                .into(viewHolder.portret);
 
-        //check if view is expanded
-        final boolean isExpanded = expandState.get(i);
-        viewHolder.expandableLayout.setVisibility(isExpanded?View.VISIBLE:View.GONE);
 
-        viewHolder.buttonLayout.setRotation(expandState.get(i) ? 180f : 0f);
-        viewHolder.buttonLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                onClickButton(viewHolder.expandableLayout, viewHolder.buttonLayout,  i);
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return staffList.size();
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tvName,tvOwnerLogin, tvOwnerUrl;
-        private ImageView ivOwner;
-        public RelativeLayout buttonLayout;
-        public LinearLayout expandableLayout;
+        private TextView zapowiedz ,opis, imie;
+        private ImageView portret;
+
 
         public ViewHolder(View view) {
             super(view);
 
-            tvName = (TextView)view.findViewById(R.id.textView_name);
-            tvOwnerLogin = (TextView)view.findViewById(R.id.textView_Owner);
-            tvOwnerUrl = (TextView)view.findViewById(R.id.textView_OwnerUrl);
-            ivOwner = (ImageView) view.findViewById(R.id.imageView_Owner);
+            zapowiedz = (TextView)view.findViewById(R.id.zapowiedz_text);
+            opis = (TextView)view.findViewById(R.id.opis_text);
+            imie = (TextView)view.findViewById(R.id.imie_text);
+            portret = (ImageView) view.findViewById(R.id.portret_img);
 
-            buttonLayout = (RelativeLayout) view.findViewById(R.id.button);
-            expandableLayout = (LinearLayout) view.findViewById(R.id.expandableLayout);
+
         }
     }
 
-    private void onClickButton(final LinearLayout expandableLayout, final RelativeLayout buttonLayout, final  int i) {
 
-        //Simply set View to Gone if not expanded
-        //Not necessary but I put simple rotation on button layout
-        if (expandableLayout.getVisibility() == View.VISIBLE){
-            createRotateAnimator(buttonLayout, 180f, 0f).start();
-            expandableLayout.setVisibility(View.GONE);
-            expandState.put(i, false);
-        }else{
-            createRotateAnimator(buttonLayout, 0f, 180f).start();
-            expandableLayout.setVisibility(View.VISIBLE);
-            expandState.put(i, true);
-        }
-    }
 
-    //Code to rotate button
-    private ObjectAnimator createRotateAnimator(final View target, final float from, final float to) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(target, "rotation", from, to);
-        animator.setDuration(300);
-        animator.setInterpolator(new LinearInterpolator());
-        return animator;
-    }
 }

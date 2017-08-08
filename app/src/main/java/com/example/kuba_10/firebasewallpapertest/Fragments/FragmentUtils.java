@@ -12,6 +12,8 @@ public interface FragmentUtils {
 
     void requestPermission();
 
+    void showSnackbar(String text);
+
 
 
 

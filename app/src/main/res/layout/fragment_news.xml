@@ -1,15 +1,29 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.NewsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+
+
+    <ImageView
+        android:id="@+id/error_image_news"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:tint="@color/pink_pressed"
+        app:srcCompat="@drawable/ic_sad" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_gravity="center"
         android:id="@+id/news_recycle"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

@@ -7,6 +7,15 @@
     android:background="@android:color/black"
     tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.GalleryFragment">
 
+
+    <ImageView
+        android:id="@+id/error_image_gallery"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:tint="@color/gray"
+        app:srcCompat="@drawable/ic_sad" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"

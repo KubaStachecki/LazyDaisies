@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.kuba_10.firebasewallpapertest.Adapters.WallAdapter;
@@ -35,6 +36,7 @@ public class GalleryFragment extends Fragment {
     private RecyclerView recyclerView;
     private FrameLayout frameLayout;
     private RelativeLayout imageContainer;
+    private ImageView errorImage;
 
 
     ArrayList<Image> imageList;
@@ -72,16 +74,17 @@ public class GalleryFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
+
+
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+
+        errorImage = (ImageView) view.findViewById(R.id.error_image_gallery);
+
 
 
         frameLayout = (FrameLayout) view.findViewById(R.id.container);
-
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-
         gridManager = new GridLayoutManager(getActivity(), 2);
-
-
         recyclerView.setLayoutManager(gridManager);
 
 
@@ -91,6 +94,7 @@ public class GalleryFragment extends Fragment {
         recyclerView.setAdapter(wallAdapter);
 
         wallAdapter.notifyDataSetChanged();
+        errorImage.setVisibility(View.GONE);
 
 
 
@@ -104,6 +108,15 @@ public class GalleryFragment extends Fragment {
 
 
         mainActivity.requestPermission();
+
+        if (imageList.size() == 0){
+
+
+            errorImage.setVisibility(View.VISIBLE);
+
+
+        }
+
 
 
     }

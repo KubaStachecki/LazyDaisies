@@ -10,9 +10,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-/**
- * Created by Kuba-10 on 18.07.2017.
- */
 public class ArtApplication extends MultiDexApplication {
 
     private static ArtApplication mainApplication;
