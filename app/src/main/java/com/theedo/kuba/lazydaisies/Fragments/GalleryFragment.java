@@ -1,12 +1,9 @@
-package com.example.kuba_10.firebasewallpapertest.Fragments;
+package com.theedo.kuba.lazydaisies.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,19 +11,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.kuba_10.firebasewallpapertest.Adapters.WallAdapter;
-import com.example.kuba_10.firebasewallpapertest.MainActivity;
-import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.R;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.theedo.kuba.lazydaisies.Adapters.WallAdapter;
+import com.theedo.kuba.lazydaisies.MainActivity;
+import com.theedo.kuba.lazydaisies.Model.Image;
+import com.theedo.kuba.lazydaisies.R;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 public class GalleryFragment extends Fragment {
 

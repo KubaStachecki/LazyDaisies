@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisies;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -8,18 +8,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 
-import com.example.kuba_10.firebasewallpapertest.Fragments.FragmentUtils;
-import com.example.kuba_10.firebasewallpapertest.Fragments.GalleryFragment;
-import com.example.kuba_10.firebasewallpapertest.Fragments.MapFragment;
-import com.example.kuba_10.firebasewallpapertest.Fragments.NewsFragment;
-import com.example.kuba_10.firebasewallpapertest.Fragments.SplashFragment;
-import com.example.kuba_10.firebasewallpapertest.Fragments.StartFragment;
-import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.Model.Staff;
+import com.theedo.kuba.lazydaisies.Fragments.FragmentUtils;
+import com.theedo.kuba.lazydaisies.Fragments.GalleryFragment;
+import com.theedo.kuba.lazydaisies.Fragments.MapFragment;
+import com.theedo.kuba.lazydaisies.Fragments.NewsFragment;
+import com.theedo.kuba.lazydaisies.Fragments.SplashFragment;
+import com.theedo.kuba.lazydaisies.Fragments.StartFragment;
+import com.theedo.kuba.lazydaisies.Model.Image;
+import com.theedo.kuba.lazydaisies.Model.Staff;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.database.DatabaseError;

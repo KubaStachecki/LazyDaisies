@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisies;
 
 import android.util.Log;
 

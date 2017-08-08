@@ -1,26 +1,18 @@
-package com.example.kuba_10.firebasewallpapertest.Fragments;
+package com.theedo.kuba.lazydaisies.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.kuba_10.firebasewallpapertest.R;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.theedo.kuba.lazydaisies.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.Map;
 
 
 public class MapFragment extends android.support.v4.app.Fragment

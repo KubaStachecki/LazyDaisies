@@ -1,20 +1,16 @@
-package com.example.kuba_10.firebasewallpapertest.Adapters;
-import android.animation.ObjectAnimator;
+package com.theedo.kuba.lazydaisies.Adapters;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.example.kuba_10.firebasewallpapertest.R;
+import com.theedo.kuba.lazydaisies.R;
 
 
-import com.example.kuba_10.firebasewallpapertest.Model.Staff;
+import com.theedo.kuba.lazydaisies.Model.Staff;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 

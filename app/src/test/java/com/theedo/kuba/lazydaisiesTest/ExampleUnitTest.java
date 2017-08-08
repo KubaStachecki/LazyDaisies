@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisiesTest;
 
 import org.junit.Test;
 

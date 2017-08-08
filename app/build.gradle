@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
-        applicationId "com.example.kuba_10.firebasewallpapertest"
+        applicationId "com.theedo.kuba.lazydaisies"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

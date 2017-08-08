@@ -1,22 +1,20 @@
-package com.example.kuba_10.firebasewallpapertest.Fragments;
+package com.theedo.kuba.lazydaisies.Fragments;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatButton;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.example.kuba_10.firebasewallpapertest.MainActivity;
-import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.R;
-import com.example.kuba_10.firebasewallpapertest.Utils;
+import com.theedo.kuba.lazydaisies.MainActivity;
+import com.theedo.kuba.lazydaisies.Model.Image;
+import com.theedo.kuba.lazydaisies.R;
+import com.theedo.kuba.lazydaisies.Utils;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;

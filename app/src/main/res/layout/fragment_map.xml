@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    android:id="@+id/map_view"
-    tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.MapFragment">
+    tools:context="com.theedo.kuba.lazydaisies.Fragments.MapFragment">
 
 
     <com.google.android.gms.maps.MapView

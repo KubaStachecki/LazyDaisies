@@ -9,7 +9,7 @@ android:id="@+id/coordinatorLayout"
     android:layout_height="match_parent"
 
     android:background="@color/gray"
-    tools:context="com.example.kuba_10.firebasewallpapertest.MainActivity">
+    tools:context="com.theedo.kuba.lazydaisies.MainActivity">
 
 
     <FrameLayout

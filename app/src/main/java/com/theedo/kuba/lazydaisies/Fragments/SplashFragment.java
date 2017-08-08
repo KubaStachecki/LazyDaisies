@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest.Fragments;
+package com.theedo.kuba.lazydaisies.Fragments;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.R;
-
-import java.util.List;
+import com.theedo.kuba.lazydaisies.R;
 
 
 public class SplashFragment extends DialogFragment {

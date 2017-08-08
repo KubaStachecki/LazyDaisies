@@ -6,7 +6,7 @@
     android:background="@color/pink"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.SplashFragment">
+    tools:context="com.theedo.kuba.lazydaisies.Fragments.SplashFragment">
 
 
     <com.airbnb.lottie.LottieAnimationView

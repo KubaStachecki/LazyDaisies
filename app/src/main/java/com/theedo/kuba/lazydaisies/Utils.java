@@ -1,27 +1,17 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisies;
 
-import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Random;
 
 /**
  * Created by Kuba-10 on 14.07.2017.

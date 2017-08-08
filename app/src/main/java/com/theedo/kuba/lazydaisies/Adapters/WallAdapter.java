@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest.Adapters;
+package com.theedo.kuba.lazydaisies.Adapters;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,18 +11,15 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.kuba_10.firebasewallpapertest.Fragments.FragmentUtils;
-import com.example.kuba_10.firebasewallpapertest.Fragments.ImageFragment;
-import com.example.kuba_10.firebasewallpapertest.Model.Image;
-import com.example.kuba_10.firebasewallpapertest.R;
-import com.example.kuba_10.firebasewallpapertest.Utils;
+import com.theedo.kuba.lazydaisies.Fragments.FragmentUtils;
+import com.theedo.kuba.lazydaisies.Fragments.ImageFragment;
+import com.theedo.kuba.lazydaisies.Model.Image;
+import com.theedo.kuba.lazydaisies.R;
+import com.theedo.kuba.lazydaisies.Utils;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import butterknife.BindView;
-import io.reactivex.Observable;
 
 /**
  * Created by Kuba-10 on 13.07.2017.

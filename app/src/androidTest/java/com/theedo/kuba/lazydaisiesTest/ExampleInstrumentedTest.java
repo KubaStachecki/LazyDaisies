@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisiesTest;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.kuba_10.firebasewallpapertest", appContext.getPackageName());
+        assertEquals("com.theedo.kuba.lazydaisies", appContext.getPackageName());
     }
 }

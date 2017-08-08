@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest.Model;
+package com.theedo.kuba.lazydaisies.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

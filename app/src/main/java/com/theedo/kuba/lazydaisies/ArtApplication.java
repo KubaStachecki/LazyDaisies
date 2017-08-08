@@ -1,14 +1,10 @@
-package com.example.kuba_10.firebasewallpapertest;
+package com.theedo.kuba.lazydaisies;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-import android.util.Log;
 
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
 
 public class ArtApplication extends MultiDexApplication {
 

@@ -1,4 +1,4 @@
-package com.example.kuba_10.firebasewallpapertest.Fragments;
+package com.theedo.kuba.lazydaisies.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.kuba_10.firebasewallpapertest.Adapters.ExpandableRecyclerAdapter;
-import com.example.kuba_10.firebasewallpapertest.MainActivity;
-import com.example.kuba_10.firebasewallpapertest.Model.Staff;
-import com.example.kuba_10.firebasewallpapertest.R;
+import com.theedo.kuba.lazydaisies.Adapters.ExpandableRecyclerAdapter;
+import com.theedo.kuba.lazydaisies.MainActivity;
+import com.theedo.kuba.lazydaisies.Model.Staff;
+import com.theedo.kuba.lazydaisies.R;
 
 import java.util.ArrayList;
 

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/gray"
-    tools:context="com.example.kuba_10.firebasewallpapertest.Fragments.StartFragment"
+    tools:context="com.theedo.kuba.lazydaisies.Fragments.StartFragment"
     android:weightSum="1">
 
     <ImageView
