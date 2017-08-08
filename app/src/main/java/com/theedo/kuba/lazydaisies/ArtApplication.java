@@ -18,6 +18,8 @@ public class ArtApplication extends MultiDexApplication {
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mainApplication = this;
 
+
+
     }
 
     @Override

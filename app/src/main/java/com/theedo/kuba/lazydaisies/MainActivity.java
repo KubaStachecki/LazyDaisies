@@ -1,14 +1,17 @@
 package com.theedo.kuba.lazydaisies;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.theedo.kuba.lazydaisies.Fragments.FragmentUtils;
 import com.theedo.kuba.lazydaisies.Fragments.GalleryFragment;
@@ -34,9 +37,9 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
     Bundle listBundle;
     CoordinatorLayout coordinatorLayout;
     Context context;
+    FragmentManager fragmentManager;
 
 
-    public static final String TAAAAG = "MAIN ACTIVITY TAG";
     private static final int REQUEST_WRITE_PERMISSION = 786;
 
     FloatingActionMenu materialDesignFAM;
@@ -47,10 +50,13 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         context = getApplicationContext();
 
+        fragmentManager = this.getSupportFragmentManager();
 
         imageList = new ArrayList<>();
         staffList = new ArrayList<>();
@@ -73,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
 
         hideTaskAndActrionBar();
 
-        SplashFragment.newInstance().show(getSupportFragmentManager(), "");
+        SplashFragment.newInstance().show(fragmentManager, "");
 
 
         openFragment(StartFragment.newInstance());
@@ -108,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
     @Override
     public void openFragment(Fragment fragment) {
 
-        this.getSupportFragmentManager()
+        fragmentManager
                 .beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.main_container, fragment)
@@ -237,6 +243,21 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
     public void showSnackbar(String text){
 
         Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(fragmentManager.getBackStackEntryCount() > 1) {
+
+            fragmentManager.popBackStack();
+
+//            Toast.makeText(context, "nacisnales back popstack " +fragmentManager.getBackStackEntryCount() , Toast.LENGTH_SHORT).show();
+
+        } else {
+            super.onBackPressed();
+            finish();
+        }
     }
 
 }

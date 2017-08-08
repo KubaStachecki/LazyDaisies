@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "980659579911",
-    "firebase_url": "https://fir-wallpapertest.firebaseio.com/",
-    "project_id": "fir-wallpapertest",
-    "storage_bucket": "fir-wallpapertest.appspot.com"
+    "project_number": "945697790859",
+    "firebase_url": "https://lazydaisies-248f1.firebaseio.com",
+    "project_id": "lazydaisies-248f1",
+    "storage_bucket": "lazydaisies-248f1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:980659579911:android:3bcf063db07348c2",
+        "mobilesdk_app_id": "1:945697790859:android:53c9d9281721b239",
         "android_client_info": {
           "package_name": "com.theedo.kuba.lazydaisies"
         }
       },
       "oauth_client": [
         {
-          "client_id": "980659579911-u6hfcnjkci3vm7vlglqsveoinjfov3lp.apps.googleusercontent.com",
+          "client_id": "945697790859-c1tvjhbjp7e6shd4riet0au0iobjrq2q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDtOIKob8jO7DjOXEFzwRPpg2_QWuMVKIk"
+          "current_key": "AIzaSyAY0c2MpDPeyVCOvzBwIcZ7XaLubsCRlzA"
         }
       ],
       "services": {

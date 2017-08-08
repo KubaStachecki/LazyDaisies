@@ -13,6 +13,8 @@ public interface FragmentUtils {
 
     void showSnackbar(String text);
 
+    void onBackPressed();
+
 
 
 
