@@ -5,9 +5,8 @@
               android:layout_height="match_parent"
               android:layout_gravity="center"
               android:background="@color/gray"
-              android:gravity="center"
+              android:gravity="top"
               android:orientation="vertical"
-              android:weightSum="1"
               tools:context="com.theedo.kuba.lazydaisies.Fragments.StartFragment">
 
     <LinearLayout
@@ -16,10 +15,21 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@drawable/ic_wezyk1"
+            android:scaleType="fitCenter"
+            android:scaleX="0.2"
+            android:scaleY="0.2"
+            android:tint="@color/pink"/>
+
         <com.google.android.exoplayer2.ui.SimpleExoPlayerView
             android:id="@+id/SimpleExoPlayer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="270dp"
             app:default_artwork="@drawable/ic_sad"
             app:use_artwork="true"
             app:use_controller="false">
@@ -27,7 +37,7 @@
             <ImageView
                 android:id="@+id/error_start"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/ic_sad"/>
@@ -86,7 +96,7 @@
                 android:gravity="center"
                 android:text="Występy Lazy Daisies zawsze przygotowywane są z zachowaniem dobrego smaku, a prezentowany erotyzm jest subtelny i przyjemny dla każdego oka."
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:textStyle="normal"/>
 
             <TextView
@@ -98,22 +108,10 @@
                 android:gravity="center"
                 android:text="Celem pokazu jest uwiedzenie widza, przeniesienie go w krainę Złotej Ery Hollywoodu, a wykorzystanie nagości jest zaledwie symboliczne."
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="15sp"
                 android:textStyle="normal"/>
 
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/wezyk_gora"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:background="@drawable/ic_wezyk1"
-            android:scaleType="fitCenter"
-            android:scaleX="0.2"
-            android:scaleY="0.2"
-            android:tint="@color/pink"/>
 
 
     </LinearLayout>

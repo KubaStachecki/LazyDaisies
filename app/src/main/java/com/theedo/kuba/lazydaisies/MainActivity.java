@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements FragmentUtils, Vi
         listBundle = new Bundle();
         listBundle.putParcelableArrayList("imagelist", imageList);
         listBundle.putParcelableArrayList("newslist", staffList);
-        openFragment(GalleryFragment.newInstance(listBundle));
+        openFragment(StartFragment.newInstance());
     }
 
     @Override
