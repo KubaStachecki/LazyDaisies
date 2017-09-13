@@ -55,12 +55,12 @@ public class NewsFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_news, container, false);
 
-        errorImage = (ImageView) view.findViewById(R.id.error_image_news);
+        errorImage = view.findViewById(R.id.error_image_news);
 
 
         staffList = getArguments().getParcelableArrayList("newslist");
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.news_recycle);
+        recyclerView = view.findViewById(R.id.news_recycle);
         errorImage.setVisibility(View.GONE);
 
 

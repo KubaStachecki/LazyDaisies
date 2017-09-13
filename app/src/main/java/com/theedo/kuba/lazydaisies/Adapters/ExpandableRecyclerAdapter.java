@@ -72,10 +72,10 @@ public class ExpandableRecyclerAdapter extends RecyclerView.Adapter<ExpandableRe
         public ViewHolder(View view) {
             super(view);
 
-            zapowiedz = (TextView)view.findViewById(R.id.zapowiedz_text);
-            opis = (TextView)view.findViewById(R.id.opis_text);
-            imie = (TextView)view.findViewById(R.id.imie_text);
-            portret = (ImageView) view.findViewById(R.id.portret_img);
+            zapowiedz = view.findViewById(R.id.zapowiedz_text);
+            opis = view.findViewById(R.id.opis_text);
+            imie = view.findViewById(R.id.imie_text);
+            portret = view.findViewById(R.id.portret_img);
 
 
         }

@@ -34,7 +34,6 @@ public class GalleryFragment extends Fragment {
 
 
     public GalleryFragment() {
-        // Required empty public constructor
     }
 
 
@@ -68,19 +67,19 @@ public class GalleryFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
-        errorImage = (ImageView) view.findViewById(R.id.error_image_gallery);
+        errorImage = view.findViewById(R.id.error_image_gallery);
 
 
 
-        frameLayout = (FrameLayout) view.findViewById(R.id.container);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        frameLayout = view.findViewById(R.id.container);
+        recyclerView = view.findViewById(R.id.recyclerView);
         gridManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(gridManager);
 
 
         imageList = getArguments().getParcelableArrayList("imagelist");
 
-        wallAdapter = new WallAdapter(getActivity(), imageList);
+        wallAdapter = new WallAdapter(getActivity().getApplicationContext(), imageList, this);
         recyclerView.setAdapter(wallAdapter);
 
         wallAdapter.notifyDataSetChanged();

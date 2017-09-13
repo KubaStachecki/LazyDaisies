@@ -10,5 +10,6 @@
     <color name="white">#FFE9F3</color>
     <color name="gray">#373737</color>
     <color name="purple">#C494C1</color>
+    <color name="transparent">#00ffffff</color>
 
 </resources>

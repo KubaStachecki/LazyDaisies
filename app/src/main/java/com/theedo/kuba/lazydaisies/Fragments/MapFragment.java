@@ -1,10 +1,12 @@
 package com.theedo.kuba.lazydaisies.Fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.theedo.kuba.lazydaisies.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,9 +54,11 @@ public class MapFragment extends android.support.v4.app.Fragment
         );
 
 
-        mMapView = (MapView) v.findViewById(R.id.mapView);
+        mMapView = v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
-        mMapView.getMapAsync(this); //this is important
+        mMapView.getMapAsync(this);
+
+
 
 
         return v;
@@ -64,6 +68,13 @@ public class MapFragment extends android.support.v4.app.Fragment
     public void onMapReady(GoogleMap googleMap) {
 
         mGoogleMap = googleMap;
+        try {
+            boolean success = mGoogleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            getContext(), R.raw.map_style1));
+            if (!success) {}
+            } catch (Resources.NotFoundException e) {}
+
         mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
         mGoogleMap.addMarker(new MarkerOptions().position(location));
         setUpMapAnimation();
@@ -73,15 +84,12 @@ public class MapFragment extends android.support.v4.app.Fragment
     private void setUpMapAnimation() {
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(location)      // Sets the center of the map to Mountain View
-                .zoom(10)                   // Sets the zoom
-                .bearing(90)                // Sets the orientation of the camera to east
-                .tilt(30)                   // Sets the tilt of the camera to 30 degrees
-                .build();                   // Creates a CameraPosition from the builder
+                .target(location)
+                .zoom(10)
+                .bearing(90)
+                .tilt(30)
+                .build();
         mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-
-//                (CameraUpdateFactory.newCameraPosition(cameraPosition));
 
 
     }

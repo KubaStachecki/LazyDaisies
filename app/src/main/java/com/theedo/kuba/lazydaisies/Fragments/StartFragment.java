@@ -41,7 +41,7 @@ import butterknife.ButterKnife;
 
 
 public class StartFragment extends Fragment {
-
+    public static final String URI_STRING = "https://firebasestorage.googleapis.com/v0/b/lazydaisies-248f1.appspot.com/o/LD_for_app3.mp4?alt=media&token=0de3024d-b4bc-4c54-a2a0-fc5706f9d776";
     @BindView(R.id.SimpleExoPlayer)
     SimpleExoPlayerView simpleExoPlayerView;
 
@@ -86,7 +86,7 @@ public class StartFragment extends Fragment {
         errorImage.setVisibility(View.GONE);
 
 
-        Uri uriLink = Uri.parse("https://firebasestorage.googleapis.com/v0/b/lazydaisies-248f1.appspot.com/o/LD_for_app3.mp4?alt=media&token=0de3024d-b4bc-4c54-a2a0-fc5706f9d776");
+        Uri uriLink = Uri.parse(URI_STRING);
 
 
         Handler mainHandler = new Handler();

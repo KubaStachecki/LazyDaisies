@@ -86,21 +86,16 @@ public class ImageFragment extends Fragment  {
         final ProgressBar progressView = loaderImage;
 
 
-        Picasso.with(getActivity()).load(image.getUrl())
+        Picasso.with(getContext()).load(image.getUrl())
 
                 .fit()
                 .centerCrop()
-
-//                .placeholder(R.drawable.progress_animation)
-                .memoryPolicy(MemoryPolicy.NO_CACHE)
-
                 .into(bigImage, new Callback() {
                     @Override
                     public void onSuccess() {
                         thisBitmap = ((BitmapDrawable) bigImage.getDrawable()).getBitmap();
 
                         progressView.setVisibility(View.GONE);
-
 
                     }
 
